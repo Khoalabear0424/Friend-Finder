@@ -9,7 +9,7 @@ app.use(express.static("public"));
 
 //integrate body-parser with express
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse application/json
 app.use(bodyParser.json())
@@ -37,7 +37,8 @@ app.post('/find-friend-match', function (req, res) {
     //     if (error) res.send(error)
     //     else res.redirect('/');
     // });
-    res.send(req.body.user_name)
+    console.log(req.body.responses)
+    res.send(req.body.responses)
 });
 
 

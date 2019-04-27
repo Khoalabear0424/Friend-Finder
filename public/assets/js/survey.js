@@ -39,21 +39,27 @@ $.ajax({
 
 
 $('#user_data').submit(function (e) {
+    e.preventDefault();
     var responses = [];
     for (let i = 0; i < $('select').length; i++) {
         responses.push($('select').eq(i).val())
     }
-    console.log(responses);
-    e.preventDefault();
-    $.ajax({
-        url: '/find-friend-match',
-        method: 'POST',
-        data: {
-            user_name: $("#user_name").val(),
-            user_image_link: $("#user_image_link").val(),
-            // responses: responses,
-        }
-    }).then(function (response) {
-        console.log(response);
-    });
+
+    if (responses.includes('0')) {
+        alert('Please answer all the questions!')
+    } else {
+        console.log(responses);
+        e.preventDefault();
+        $.ajax({
+            url: '/find-friend-match',
+            method: 'POST',
+            data: {
+                user_name: $("#user_name").val(),
+                user_image_link: $("#user_image_link").val(),
+                'responses': responses
+            }
+        }).then(function (response) {
+            console.log(response);
+        });
+    }
 })
