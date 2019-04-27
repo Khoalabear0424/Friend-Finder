@@ -14,7 +14,29 @@
 </head>
 
 <body>
-    <h1>Survey</h1>
+    <br>
+    <div class="container">
+        <h2>Survey Questions</h2>
+        <hr>
+
+        <div class="container">
+            <form method="POST" action="/login" class="#" id="user_data">
+                <h1 class="h3 mb-3 font-weight-normal">About You</h1>
+                <p>Name (required)</p>
+                <input type="text" name="user_name" id="user_name" class="form-control" required autofocus>
+                <br>
+                <p>Image Link</p>
+                <input type="text" name="user_image_link" id="user_image_link" class="form-control" required>
+                <br>
+
+                <div class="questionDisplay">
+
+                </div>
+
+                <button class="btn btn-lg btn-success signin">Submit</button>
+            </form>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
