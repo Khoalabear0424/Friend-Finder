@@ -32,11 +32,12 @@ app.get('/questions.json', function (req, res) {
     });
 });
 
-app.post('/animals-insert', function (req, res) {
-    connection.query('INSERT INTO animals (animal_name) VALUES (?)', [req.body.animal_name], function (error, results, fields) {
-        if (error) res.send(error)
-        else res.redirect('/');
-    });
+app.post('/find-friend-match', function (req, res) {
+    // connection.query('INSERT INTO animals (animal_name) VALUES (?)', [req.body.animal_name], function (error, results, fields) {
+    //     if (error) res.send(error)
+    //     else res.redirect('/');
+    // });
+    res.send(req.body.user_name)
 });
 
 

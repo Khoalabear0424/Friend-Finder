@@ -20,9 +20,11 @@ $.ajax({
         $select.attr('class', 'form-control')
         $select.attr('id', questions[i].id)
 
-        for (let i = 1; i <= 5; i++) {
+        var allOptions = [1 + ' Strongly Disagrees', 2, 3, 4, 5 + ' Strongly Agree']
+
+        for (let i in allOptions) {
             var $option = $('<option>');
-            $option.text(i);
+            $option.text(allOptions[i]);
             $select.append($option);
         }
 
@@ -33,3 +35,17 @@ $.ajax({
         $('.questionsDisplay').append('<br>');
     }
 });
+
+
+$('#user_data').submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+        url: '/find-friend-match',
+        method: 'POST',
+        data: {
+            user_name: $("#user_name").val(),
+        }
+    }).then(function (response) {
+        console.log(response);
+    });
+})
