@@ -45,7 +45,7 @@ $('#user_data').submit(function (e) {
         responses.push($('select').eq(i).val())
     }
 
-    if (responses.includes('0')) {
+    if (responses.includes('100')) {
         alert('Please answer all the questions!')
     } else {
         console.log(responses);

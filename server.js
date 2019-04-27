@@ -33,13 +33,20 @@ app.get('/questions.json', function (req, res) {
 });
 
 app.post('/find-friend-match', function (req, res) {
-    // connection.query('INSERT INTO animals (animal_name) VALUES (?)', [req.body.animal_name], function (error, results, fields) {
-    //     if (error) res.send(error)
-    //     else res.redirect('/');
-    // });
-    console.log(req.body.responses)
-    res.send(req.body.responses)
-});
+    connection.query('INSERT INTO friends (name, picture_link) VALUES (?,?)', [req.body.user_name, req.body.user_image_link], function (error, results, fields) {
+
+        var userScores = req.body.responses.map((score, index) => {
+            return [index + 1, results.insertId, score]
+        })
+        connection.query('INSERT INTO scores (question_id, friend_id, score) VALUES ?', [userScores], function (error, results, fields) {
+            if (error) res.send(error)
+            else {
+                console.log(`Added questions scores `)
+                res.send(req.body)
+            }
+        });
+    })
+})
 
 
 app.listen(3001, function () {
