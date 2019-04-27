@@ -20,13 +20,13 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'animals_db'
+    database: 'friend_finder_db'
 });
 
 connection.connect();
 
-app.get('/animals.json', function (req, res) {
-    connection.query('SELECT * FROM animals', function (error, results, fields) {
+app.get('/questions.json', function (req, res) {
+    connection.query('SELECT * FROM questions', function (error, results, fields) {
         if (error) res.send(error)
         else res.json(results);
     });
