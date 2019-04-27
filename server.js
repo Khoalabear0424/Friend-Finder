@@ -40,13 +40,6 @@ app.post('/animals-insert', function (req, res) {
     });
 });
 
-app.put('/animals-insert-form', function (req, res) {
-    connection.query('INSERT INTO animals (animal_name) VALUES (?)', [req.body.animal_name], function (error, results, fields) {
-        if (error) res.send(error)
-        else res.redirect('/');
-    });
-});
-
 
 app.listen(3001, function () {
     console.log('listening on 3001');
