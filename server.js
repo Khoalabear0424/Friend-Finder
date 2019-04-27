@@ -8,7 +8,6 @@ app.use(methodOverride('_method'))
 app.use(express.static("public"));
 
 //integrate body-parser with express
-
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 

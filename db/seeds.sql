@@ -1,4 +1,4 @@
-USE friend-finder_db;
+USE friend_finder_db;
 
 INSERT INTO questions (question) VALUES 
 ('Your mind is always buzzing with unexplored ideas and plans.'),
