@@ -21,3 +21,5 @@ jQuery, Node.js, Express, MySQL
 4. Now that the database has been created, run server with <br>`nodemon server.js`
 5. In browser, go to `localhost:3000/` and begin using app.
 
+
+## Feel Free to message me with any questions!
