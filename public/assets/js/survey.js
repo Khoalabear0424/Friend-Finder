@@ -60,6 +60,11 @@ $('#user_data').submit(function (e) {
             }
         }).then(function (response) {
             console.log(response);
-        });
+            if (response.length === 0) {
+                alert('No one has used this friend finder yet.  One more usage should do it!')
+            } else {
+                alert(`Your Post Compatible Friend is ${response[0].existing_name}!`)
+            }
+        })
     }
 })
