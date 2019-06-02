@@ -22,4 +22,4 @@ jQuery, Node.js, Express, MySQL
 5. In browser, go to `localhost:3000/` and begin using app.
 
 
-## Feel Free to message me with any questions!
+## Feel Free to message me with any question!
